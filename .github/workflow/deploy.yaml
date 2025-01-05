@@ -1,0 +1,33 @@
+name: CI Deploy to server
+on:
+  push:
+    branches: [ "main" ]
+jobs:
+  deploy:
+    name: "Deploy to aratech server"
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_KEY" > ~/.ssh/staging.key
+          chmod 600 ~/.ssh/staging.key
+          cat >>~/.ssh/config <<END
+          Host staging
+            HostName $SSH_HOST
+            User $SSH_USER
+            Port 2223
+            IdentityFile ~/.ssh/staging.key
+            StrictHostKeyChecking no
+          END
+        env:
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_KEY: ${{ secrets.SSH_KEY }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+
+      - name: Pull the source on the server
+        run: ssh staging 'cd Aratech_configuration && git pull'
+
+      - name: Update the docker compose
+        run: ssh staging 'cd Aratech_configuration && ./update_docker_compose.sh'
