@@ -1,0 +1,20 @@
+
+services:
+  canin:
+    image: roboticia/canin:dev
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile-dev
+    container_name: vue_server_canin
+    command: |
+      sh -c "
+      npm install &&
+      npm run dev -- --host 0.0.0.0
+      "
+    env_file:
+      - .env
+    volumes:
+      - ${APP_DIR}:/App
+    ports:
+      - "8000:3000"
+

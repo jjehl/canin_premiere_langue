@@ -1,0 +1,21 @@
+h1 {
+    color: rgb(var(--v-theme-text1)); /* Utilise la couleur "primary" du thème Vuetify */
+    font-size: clamp(20px, 4vw, 32px);
+}
+h2 {
+    color: rgb(var(--v-theme-text2)); /* Utilise la couleur "primary" du thème Vuetify */
+    font-size: clamp(18px, 4vw, 26px);
+
+}
+h3 {
+    color: rgb(var(--v-theme-text3)); /* Utilise la couleur "primary" du thème Vuetify */
+    font-size: clamp(16px, 4vw, 20px);
+}
+.text-bold {
+    font-weight: bold;
+    color: rgb(var(--v-theme-text1));
+    font-size: 18px;
+}
+
+
+

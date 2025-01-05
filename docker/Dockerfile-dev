@@ -1,0 +1,8 @@
+# Utilise une image Node.js avec la dernière version LTS sur Alpine
+FROM node:22-alpine
+
+RUN apk add bash
+# Crée un répertoire de travail dans le conteneur
+WORKDIR /App
+
+
