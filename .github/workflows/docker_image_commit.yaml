@@ -82,7 +82,7 @@ jobs:
           host: ${{ secrets.SSH_IP }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.CANIN_PRIVATE_KEY }}
-          source: ./deploy.sh
+          source: ./deploy/deploy.sh
           target: /home/canin/deploy.sh
           port: ${{ secrets.SSH_PORT }}
           debug: true
