@@ -44,6 +44,20 @@ jobs:
         with:
           name: code
           path: .
+
+      - name: Debug SSH variables
+        run: |
+          echo "SSH_IP: ${{ secrets.SSH_IP }}"
+          echo "SSH_USER: ${{ secrets.SSH_USER }}"
+          echo "SSH_PORT: ${{ secrets.SSH_PORT }}"
+
+      - name: Manual SSH Test
+        run: |
+          ssh -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_IP }} "echo 'SSH connection successful'"
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.CANIN_PRIVATE_KEY }}
+
+
       - name: Copy deploy.sh to server
         uses: appleboy/scp-action@v0.1.7
         with:
