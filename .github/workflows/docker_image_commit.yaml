@@ -52,12 +52,15 @@ jobs:
           echo "SSH_USER: ${{ secrets.SSH_USER }}"
           echo "SSH_PORT: ${{ secrets.SSH_PORT }}"
 
+      - name: Set SSH_PRIVATE_KEY environment variable
+        run: echo "${{ secrets.CANIN_PRIVATE_KEY }}" > private_key && chmod 600 private_key
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.CANIN_PRIVATE_KEY }}
+
       - name: Manual SSH Test
         run: |
           echo $SSH_PRIVATE_KEY
-          ssh -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_IP }} "echo 'SSH connection successful'"
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.CANIN_PRIVATE_KEY }}
+          ssh -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }} -i private_key ${{ secrets.SSH_USER }}@${{ secrets.SSH_IP }} "echo 'SSH connection successful'"
 
 
       - name: Copy deploy.sh to server
