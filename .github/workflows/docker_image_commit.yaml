@@ -62,9 +62,19 @@ jobs:
           echo $SSH_PRIVATE_KEY
           ssh -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }} -i private_key ${{ secrets.SSH_USER }}@${{ secrets.SSH_IP }} "echo 'SSH connection successful'"
 
+      - name: Verify deploy.sh exists
+        run: |
+          ls -la
+          if [ -f ./deploy.sh ]; then
+            echo "deploy.sh exists"
+          else
+            echo "deploy.sh does not exist"
+            exit 1
+          fi
+
       - name: Manual SCP Test
         run: |
-          scp -o StrictHostKeyChecking=no -P ${{ vars.SSH_PORT }} -i private_key ./deploy.sh ${{ vars.SSH_USER }}@${{ vars.SSH_IP }}:/home/canin/deploy.sh
+          scp -o StrictHostKeyChecking=no -P ${{ secrets.SSH_PORT }} -i private_key ./deploy.sh ${{ secrets.SSH_USER }}@${{ secrets.SSH_IP }}:/home/canin/deploy.sh
 
       - name: Copy deploy.sh to server
         uses: appleboy/scp-action@v0.1.7
