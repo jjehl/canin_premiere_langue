@@ -1,7 +1,7 @@
 name: CI Deploy to server
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "toto" ]
 jobs:
   deploy:
     name: "Deploy to aratech server"
