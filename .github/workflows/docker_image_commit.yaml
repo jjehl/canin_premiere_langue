@@ -53,3 +53,4 @@ jobs:
           source: ./deploy.sh
           target: /home/canin/deploy.sh
           port: ${{ secrets.SSH_PORT }}
+          debug: true
