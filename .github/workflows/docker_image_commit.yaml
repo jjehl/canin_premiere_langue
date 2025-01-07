@@ -65,7 +65,7 @@ jobs:
       - name: Verify deploy.sh exists
         run: |
           ls -la
-          if [ -f ./deploy.sh ]; then
+          if [ -f ./deploy/deploy.sh ]; then
             echo "deploy.sh exists"
           else
             echo "deploy.sh does not exist"
