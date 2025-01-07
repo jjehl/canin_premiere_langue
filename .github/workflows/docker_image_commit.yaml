@@ -76,6 +76,7 @@ jobs:
 #        run: |
 #          scp -o StrictHostKeyChecking=no -P ${{ secrets.SSH_PORT }} -i private_key ./deploy/deploy.sh ${{ secrets.SSH_USER }}@${{ secrets.SSH_IP }}:/home/canin/deploy.sh
 
+
       - name: Copy deploy.sh to server
         uses: appleboy/scp-action@v0.1.7
         with:
