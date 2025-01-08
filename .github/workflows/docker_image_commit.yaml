@@ -76,15 +76,16 @@ jobs:
 #        run: |
 #          scp -o StrictHostKeyChecking=no -P ${{ secrets.SSH_PORT }} -i private_key ./deploy/deploy.sh ${{ secrets.SSH_USER }}@${{ secrets.SSH_IP }}:/home/canin/deploy.sh
 
+      - name: Create version file
+        run: echo "${{ github.sha }}" > version.env
 
-      - name: Copy deploy.sh to server
+      - name: Copy files to server
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.SSH_IP }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.CANIN_PRIVATE_KEY }}
-          source: ./deploy/deploy.sh, ./deploy/docker-compose.yaml
+          source: ./deploy/deploy.sh, ./deploy/docker-compose.yaml, ./version.env
           target: /home/canin/
           port: ${{ secrets.SSH_PORT }}
-          debug: true
           overwrite: true

@@ -1,0 +1,9 @@
+
+services:
+  canin:
+    image: jjehl/canin-premiere-langue:f30cebb2304ec761ca566ca36d5b35ed56943a5e
+    env_file:
+      - ../version.env
+    ports:
+      - "8072:80"
+
