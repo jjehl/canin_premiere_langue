@@ -83,7 +83,7 @@ jobs:
           host: ${{ secrets.SSH_IP }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.CANIN_PRIVATE_KEY }}
-          source: ./deploy/deploy.sh
+          source: ./deploy/deploy.sh, ./deploy/docker-compose.yaml
           target: /home/canin/
           port: ${{ secrets.SSH_PORT }}
           debug: true
