@@ -82,10 +82,10 @@ jobs:
       - name: Copy files to server
         uses: appleboy/scp-action@v0.1.7
         with:
-          host: ${{ secrets.SSH_IP }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.CANIN_PRIVATE_KEY }}
+          host: ${{ secrets.SSH_CANIN_HOST }}
+          username: ${{ secrets.SSH_CANIN_USER }}
+          key: ${{ secrets.SSH_CANIN_KEY }}
           source: ./deploy/deploy.sh, ./deploy/docker-compose.yaml, ./version.env
           target: /home/canin/
-          port: ${{ secrets.SSH_PORT }}
+          port: ${{ secrets.SSH_CANIN_PORT }}
           overwrite: true

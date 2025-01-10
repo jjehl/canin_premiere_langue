@@ -1,9 +1,24 @@
-
 services:
+
   canin:
     image: jjehl/canin-premiere-langue:f30cebb2304ec761ca566ca36d5b35ed56943a5e
-    env_file:
-      - ../version.env
-    ports:
-      - "8072:80"
 
+    labels:
+      - "traefik.http.services.canin.loadbalancer.server.port=80"
+      - "traefik.http.routers.canin_http.entrypoints=web"
+      - "traefik.http.routers.canin_http.rule=Host(`caninpremierelangue.fr`) || Host(`www.caninpremierelangue.fr`)"
+      - "traefik.http.routers.canin_http.middlewares=canin_https"
+      - "traefik.http.middlewares.canin_https.redirectscheme.scheme=https"
+      - "traefik.http.routers.canin.entrypoints=websecure}"
+      - "traefik.http.routers.canin.rule=Host(`caninpremierelangue.fr`) || Host(`www.caninpremierelangue.fr`)"
+      - "traefik.http.routers.canin.tls=true}"
+      - "traefik.http.routers.canin.tls.certresolver=myresolver"
+      # add header for csrf
+      - "traefik.http.middlewares.caninHeader.headers.customrequestheaders.HTTP_X_FORWARDED_PROTO=https"
+    networks:
+      compose_traefik_aratech_net:
+        ipv4_address: 10.5.5.1
+
+networks:
+  compose_traefik_aratech_net:
+    external: true
