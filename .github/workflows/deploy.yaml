@@ -15,22 +15,18 @@ jobs:
       - name: Set variables for push
         if: github.event_name == 'push'
         run: |
-          echo "DEPLOY_ENV=re7" >> $GITHUB_ENV
-          echo "IMAGE_TAG=${{ github.sha }}" >> $GITHUB_ENV
+          echo "DEPLOY_ENV=re7" > deploy_env.txt
+          echo "IMAGE_TAG=${{ github.sha }}" >> deploy_env.txt
       - name: Set variables for pull request
         if: github.event_name == 'pull_request'
         run: |
-          echo "DEPLOY_ENV=re7" >> $GITHUB_ENV
-          echo "IMAGE_TAG=${{ github.sha }}" >> $GITHUB_ENV
+          echo "DEPLOY_ENV=re7" > deploy_env.txt
+          echo "IMAGE_TAG=${{ github.sha }}" >> deploy_env.txt
       - name: Set variables for release
         if: github.event_name == 'release'
         run: |
-          echo "DEPLOY_ENV=prod" >> $GITHUB_ENV
-          echo "IMAGE_TAG=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
-      - name: Display variables
-        run: |
-          echo "Deploy Env: ${{ env.DEPLOY_ENV }}"
-          echo "Image Tag: ${{ env.IMAGE_TAG }}"
+          echo "DEPLOY_ENV=prod" > deploy_env.txt
+          echo "IMAGE_TAG=${{ github.event.release.tag_name }}" >> deploy_env.txt
       - name: Upload code as artifact
         uses: actions/upload-artifact@v4
         with:
@@ -69,8 +65,7 @@ jobs:
 
       - name: Display variables
         run: |
-          echo "Deploy Env: ${{ env.DEPLOY_ENV }}"
-          echo "Image Tag: ${{ env.IMAGE_TAG }}"
+          cat deploy_env.txt
 
       - name: Create version file
         run: echo "${{ env.IMAGE_TAG }}" > deploy/version.env
