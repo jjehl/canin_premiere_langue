@@ -96,4 +96,4 @@ jobs:
           port: ${{ secrets.SSH_CANIN_PORT }}
           script: |
             cd deploy
-            ./start_remote.sh ${{ env.DEPLOY_ENV }}
+            bash start_remote.sh ${{ env.DEPLOY_ENV }}
