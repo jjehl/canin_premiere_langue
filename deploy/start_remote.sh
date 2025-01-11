@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-docker compose -f docker-compose-$1.yaml up --env-file version.env   -d --remove-orphans
+docker compose --env-file version.env -f docker-compose-$1.yaml up -d --remove-orphans

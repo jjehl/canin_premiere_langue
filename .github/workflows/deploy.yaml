@@ -67,6 +67,11 @@ jobs:
           name: code
           path: .
 
+      - name: Display variables
+        run: |
+          echo "Deploy Env: ${{ env.DEPLOY_ENV }}"
+          echo "Image Tag: ${{ env.IMAGE_TAG }}"
+
       - name: Create version file
         run: echo "${{ env.IMAGE_TAG }}" > deploy/version.env
 
