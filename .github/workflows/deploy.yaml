@@ -66,7 +66,6 @@ jobs:
       - name: Display variables
         run: |
           cat version.env
-          source version.env
 
       - name: Copy files to server
         uses: appleboy/scp-action@v0.1.7
@@ -93,5 +92,6 @@ jobs:
           key: ${{ secrets.SSH_CANIN_KEY }}
           port: ${{ secrets.SSH_CANIN_PORT }}
           script: |
+            source version.env
             cd deploy
-            bash start_remote.sh ${{ env.DEPLOY_ENV }}
+            bash start_remote.sh $DEPLOY_ENV
