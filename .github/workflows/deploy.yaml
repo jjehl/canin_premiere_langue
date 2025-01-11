@@ -48,7 +48,7 @@ jobs:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_TOKEN }}
       - name: Build Docker image
-        run: docker build -t jjehl/canin-premiere-langue:${{ github.sha }} .
+        run: docker build -f deploy/Dockerfile -t jjehl/canin-premiere-langue:${{ github.sha }} .
       - name: Push Docker image
         run: docker push jjehl/canin-premiere-langue:${{ github.sha }}
 
