@@ -67,36 +67,6 @@ jobs:
           name: code
           path: .
 
-#      - name: Debug SSH variables
-#        run: |
-#          echo "SSH_IP: ${{ secrets.SSH_IP }}"
-#          echo "SSH_USER: ${{ secrets.SSH_USER }}"
-#          echo "SSH_PORT: ${{ secrets.SSH_PORT }}"
-#
-#      - name: Set SSH_PRIVATE_KEY environment variable
-#        run: echo "${{ secrets.CANIN_PRIVATE_KEY }}" > private_key && chmod 600 private_key
-#        env:
-#          SSH_PRIVATE_KEY: ${{ secrets.CANIN_PRIVATE_KEY }}
-#
-#      - name: Manual SSH Test
-#        run: |
-#          echo $SSH_PRIVATE_KEY
-#          ssh -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }} -i private_key ${{ secrets.SSH_USER }}@${{ secrets.SSH_IP }} "echo 'SSH connection successful'"
-#
-#      - name: Verify deploy.sh exists
-#        run: |
-#          ls -la
-#          if [ -f ./deploy/deploy.sh ]; then
-#            echo "deploy.sh exists"
-#          else
-#            echo "deploy.sh does not exist"
-#            exit 1
-#          fi
-#
-#      - name: Manual SCP Test
-#        run: |
-#          scp -o StrictHostKeyChecking=no -P ${{ secrets.SSH_PORT }} -i private_key ./deploy/deploy.sh ${{ secrets.SSH_USER }}@${{ secrets.SSH_IP }}:/home/canin/deploy.sh
-
       - name: Create version file
         run: echo "${{ github.sha }}" > version.env
 
@@ -106,18 +76,23 @@ jobs:
           host: ${{ secrets.SSH_CANIN_HOST }}
           username: ${{ secrets.SSH_CANIN_USER }}
           key: ${{ secrets.SSH_CANIN_KEY }}
-          source: ./deploy/start_remote.sh, ./deploy/docker-compose.yaml, ./version.env, ./deploy/.env
+          source: >
+            ./deploy/start_remote.sh,
+            ./deploy/docker-compose.yaml,
+            ./version.env,
+            ./deploy/re7.env,
+            ./deploy/prod.env
           target: /home/canin/
           port: ${{ secrets.SSH_CANIN_PORT }}
           overwrite: true
 
-#      - name: Start docker compose
-#        uses: appleboy/ssh-action@v1.0.0
-#        with:
-#          host: ${{ secrets.SSH_CANIN_HOST }}
-#          username: ${{ secrets.secrets.SSH_CANIN_USER }}
-#          key: ${{ secrets.SSH_CANIN_KEY }}
-#          port: ${{ secrets.SSH_CANIN_PORT }}
-#          script: |
-#            cd deploy
-#            ./start_remote.sh ${{ env.DEPLOY_ENV }}
+      - name: Start docker compose
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_CANIN_HOST }}
+          username: ${{ secrets.secrets.SSH_CANIN_USER }}
+          key: ${{ secrets.SSH_CANIN_KEY }}
+          port: ${{ secrets.SSH_CANIN_PORT }}
+          script: |
+            cd deploy
+            ./start_remote.sh ${{ env.DEPLOY_ENV }}
