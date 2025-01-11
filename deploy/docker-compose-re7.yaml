@@ -15,7 +15,6 @@ services:
       - "traefik.http.routers.canin.tls.certresolver=myresolver"
       - "traefik.http.routers.reverse-proxy.middlewares=auth"
       - "traefik.http.middlewares.auth.basicauth.users=traefik:$$2y$$05$$svYXLvEMeoehG8nTklaxaOLV9HjovFhhYA49HI0RY5GTDpM88s/HC"
-
       # add header for csrf
       - "traefik.http.middlewares.caninHeader.headers.customrequestheaders.HTTP_X_FORWARDED_PROTO=https"
     networks:

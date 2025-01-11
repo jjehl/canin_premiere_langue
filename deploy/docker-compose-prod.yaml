@@ -13,7 +13,6 @@ services:
       - "traefik.http.routers.canin.rule=Host(`caninpremierelangue.fr`) || Host(`www.caninpremierelangue.fr`)"
       - "traefik.http.routers.canin.tls=true"
       - "traefik.http.routers.canin.tls.certresolver=myresolver"
-
       # add header for csrf
       - "traefik.http.middlewares.caninHeader.headers.customrequestheaders.HTTP_X_FORWARDED_PROTO=https"
     networks:
