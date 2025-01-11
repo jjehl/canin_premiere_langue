@@ -4,19 +4,19 @@ services:
     image: jjehl/canin-premiere-langue:f30cebb2304ec761ca566ca36d5b35ed56943a5e
 
     labels:
-      - "traefik.http.services.canin.loadbalancer.server.port=80"
-      - "traefik.http.routers.canin_http.entrypoints=web"
-      - "traefik.http.routers.canin_http.rule=Host(`re7.caninpremierelangue.fr`)"
-      - "traefik.http.routers.canin_http.middlewares=canin_https"
-      - "traefik.http.middlewares.canin_https.redirectscheme.scheme=https"
-      - "traefik.http.routers.canin.entrypoints=websecure"
-      - "traefik.http.routers.canin.rule=Host(`re7.caninpremierelangue.fr`)"
-      - "traefik.http.routers.canin.tls=true"
-      - "traefik.http.routers.canin.tls.certresolver=myresolver"
+      - "traefik.http.services.canin-re7.loadbalancer.server.port=80"
+      - "traefik.http.routers.canin-re7_http.entrypoints=web"
+      - "traefik.http.routers.canin-re7_http.rule=Host(`re7.caninpremierelangue.fr`)"
+      - "traefik.http.routers.canin-re7_http.middlewares=canin-re7_https"
+      - "traefik.http.middlewares.canin-re7_https.redirectscheme.scheme=https"
+      - "traefik.http.routers.canin-re7.entrypoints=websecure"
+      - "traefik.http.routers.canin-re7.rule=Host(`re7.caninpremierelangue.fr`)"
+      - "traefik.http.routers.canin-re7.tls=true"
+      - "traefik.http.routers.canin-re7.tls.certresolver=myresolver"
       - "traefik.http.routers.reverse-proxy.middlewares=auth"
       - "traefik.http.middlewares.auth.basicauth.users=traefik:$$2y$$05$$svYXLvEMeoehG8nTklaxaOLV9HjovFhhYA49HI0RY5GTDpM88s/HC"
       # add header for csrf
-      - "traefik.http.middlewares.caninHeader.headers.customrequestheaders.HTTP_X_FORWARDED_PROTO=https"
+      - "traefik.http.middlewares.canin-re7Header.headers.customrequestheaders.HTTP_X_FORWARDED_PROTO=https"
     networks:
       compose_traefik_aratech_net:
         ipv4_address: 10.5.5.11
