@@ -1,7 +1,7 @@
 services:
 
   canin-re7:
-    image: jjehl/canin-premiere-langue:${VERSION}
+    image: jjehl/canin-premiere-langue:${IMAGE_TAG}
 
     labels:
       - "traefik.http.services.canin-re7.loadbalancer.server.port=80"
@@ -13,7 +13,7 @@ services:
       - "traefik.http.routers.canin-re7.rule=Host(`re7.caninpremierelangue.fr`)"
       - "traefik.http.routers.canin-re7.tls=true"
       - "traefik.http.routers.canin-re7.tls.certresolver=myresolver"
-      - "traefik.http.middlewares.canin-auth.basicauth.users=test:$2b$12$OJOMqF0xfT7KgaOazoT/euBsjBO5lI8sIf9YxL/qpxS0MJZHkoz7u"
+      - "traefik.http.middlewares.canin-auth.basicauth.users=test:`$2b$12$OJOMqF0xfT7KgaOazoT/euBsjBO5lI8sIf9YxL/qpxS0MJZHkoz7u`"
       # add header for csrf
       - "traefik.http.middlewares.canin-re7Header.headers.customrequestheaders.HTTP_X_FORWARDED_PROTO=https"
     networks:
