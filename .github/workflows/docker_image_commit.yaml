@@ -90,7 +90,7 @@ jobs:
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.SSH_CANIN_HOST }}
-          username: ${{ secrets.secrets.SSH_CANIN_USER }}
+          username: ${{ secrets.SSH_CANIN_USER }}
           key: ${{ secrets.SSH_CANIN_KEY }}
           port: ${{ secrets.SSH_CANIN_PORT }}
           script: |

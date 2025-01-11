@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-docker compose --env-file $1.env up -d
+docker compose -f docker-compose-$1.yaml up -d
