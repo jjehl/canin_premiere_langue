@@ -68,7 +68,7 @@ jobs:
           path: .
 
       - name: Create version file
-        run: echo "${{ github.sha }}" > version.env
+        run: echo "${{ env.IMAGE_TAG }}" > deploy/version.env
 
       - name: Copy files to server
         uses: appleboy/scp-action@v0.1.7
