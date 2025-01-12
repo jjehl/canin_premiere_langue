@@ -1,7 +1,7 @@
 services:
 
   canin:
-    image: jjehl/canin-premiere-langue:f30cebb2304ec761ca566ca36d5b35ed56943a5e
+    image: jjehl/canin-premiere-langue:${IMAGE_TAG}
 
     labels:
       - "traefik.http.services.canin.loadbalancer.server.port=80"
