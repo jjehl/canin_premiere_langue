@@ -1,7 +1,7 @@
 
 services:
   canin:
-    image: roboticia/canin:dev
+    image: jjehl/canin:dev
     build:
       context: ../
       dockerfile: docker/Dockerfile-dev
