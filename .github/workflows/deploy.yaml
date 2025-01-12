@@ -7,7 +7,7 @@ on:
     branches: ["main"]
     types: [opened, synchronize, reopened]
   release:
-    types: [created, published, released]
+    types: [published]
 
 
 jobs:
