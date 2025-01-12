@@ -1,0 +1,29 @@
+services:
+
+  canin-re7:
+    image: jjehl/canin-premiere-langue:${IMAGE_TAG}
+
+    labels:
+      - "traefik.http.services.canin-re7.loadbalancer.server.port=80"
+      - "traefik.http.routers.canin-re7_http.entrypoints=web"
+      - "traefik.http.routers.canin-re7_http.rule=Host(`re7.caninpremierelangue.fr`)"
+      - "traefik.http.routers.canin-re7_http.middlewares=canin-re7_https"
+      - "traefik.http.middlewares.canin-re7_https.redirectscheme.scheme=https"
+      - "traefik.http.routers.canin-re7.entrypoints=websecure"
+      - "traefik.http.routers.canin-re7.rule=Host(`re7.caninpremierelangue.fr`)"
+      - "traefik.http.routers.canin-re7.tls=true"
+      - "traefik.http.routers.canin-re7.tls.certresolver=myresolver"
+      - "traefik.http.routers.canin-re7.middlewares=canin-auth"
+      # Note: when used in docker-compose.yml all dollar signs in the hash need to be doubled for escaping.
+      # To create a user:password pair, the following command can be used:
+      # echo $(htpasswd -nb user password) | sed -e s/\\$/\\$\\$/g
+      - "traefik.http.middlewares.canin-auth.basicauth.users=canin:$$apr1$$3YNAE918$$ClKUZzdYsrysRDV.tx09Y."
+      # add header for csrf
+      - "traefik.http.middlewares.canin-re7Header.headers.customrequestheaders.HTTP_X_FORWARDED_PROTO=https"
+    networks:
+      compose_traefik_aratech_net:
+        ipv4_address: 10.5.5.11
+
+networks:
+  compose_traefik_aratech_net:
+    external: true
