@@ -77,12 +77,12 @@ jobs:
         run: |
           source version.env
           echo "VERSION_FILE=version_${DEPLOY_ENV}.env" >> $GITHUB_ENV
-          mv version.env ${{ env.VERSION_FILE }}
 
       - name: Display variables
         run: |
           cat version.env
           echo "${{ env.VERSION_FILE }}"
+          mv version.env ${{ env.VERSION_FILE }}
 
       - name: Copy files to server
         uses: appleboy/scp-action@v0.1.7
