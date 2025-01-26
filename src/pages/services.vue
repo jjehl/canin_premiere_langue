@@ -48,8 +48,8 @@
       </v-col>
       <!-- texte à droite -->
       <v-col cols="12" md="6" class="text-center">
-        <h2>Vous avez un chien qui tire en laisse et</h2>
-        <h2>vous rêvez de balades agréables ?</h2>
+        <h2>Vous avez un chiot et</h2>
+        <h2>vous rêvez de lui donner une bonne éducation ?</h2>
       </v-col>
 
     </v-row>
