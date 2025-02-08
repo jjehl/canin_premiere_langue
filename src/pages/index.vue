@@ -64,10 +64,12 @@
         class="d-flex flex-wrap justify-space-between justify-center align-center text-center pa-4 rounded-lg elevation-2">
       <!-- contact à gauche -->
       <v-col cols="12" md="6" class="d-flex flex-column justify-center align-center">
-        <p><strong>CONTACTEZ-NOUS !</strong></p>
-        <p>06.73.33.84.59</p>
-        <p>Du lundi au samedi</p>
-        <p>De 8h30 à 20h</p>
+        <v-card class="pa-4 rounded-lg" style="background-color: #f3c247;">
+          <p><strong>CONTACTEZ-NOUS !</strong></p>
+          <p>06.73.33.84.59</p>
+          <p>Du lundi au samedi</p>
+          <p>De 8h30 à 20h</p>
+        </v-card>
       </v-col>
 
       <!-- Texte à droite -->
