@@ -26,7 +26,7 @@ const customTheme = {
     info: '#83858a',
     success: '#4caf50',
     warning: '#fb8c00',
-    text1: '#42504b',
+    text1: '#e6d733',
     text3: '#319132',
     text2: '#155a16',
   },

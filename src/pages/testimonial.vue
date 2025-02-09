@@ -5,7 +5,7 @@
       <p style="font-size: 0.9em;">Canin première langue - ASSOCIATION loi 1901 - Pour la prévention des morsures, des
         abandons et des euthanasies</p>
     </v-row>
-    <v-row class="d-flex flex-column justify-center align-center text-center">
+    <v-row class="green-background d-flex flex-column justify-center align-center text-center">
       <h1>Ils se sont lancés avec nous !</h1>
     </v-row>
     <v-row align="center" justify="space-between" class="flex-wrap">

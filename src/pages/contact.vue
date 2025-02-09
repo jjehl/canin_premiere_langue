@@ -19,7 +19,7 @@
 
     </v-row>
 
-    <v-row class="d-flex flex-column justify-center align-center text-center">
+    <v-row class="green-background d-flex flex-column justify-center align-center text-center">
       <h1>Apprenez à parler la même langue que votre chien</h1>
       <h1>Utilisez ses propres codes pour mieux vous faire comprendre</h1>
       <br>

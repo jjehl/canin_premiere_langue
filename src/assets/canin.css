@@ -13,8 +13,14 @@ h3 {
 }
 .text-bold {
     font-weight: bold;
-    color: rgb(var(--v-theme-text1));
+    color: rgb(var(--v-theme-text3));
     font-size: 18px;
+}
+.green-background {
+    background-color: #597956; /* Couleur de fond */
+    border-radius: 10px; /* Coins arrondis */
+    margin-top: 40px !important;
+    margin-bottom: 20px !important;
 }
 
 
