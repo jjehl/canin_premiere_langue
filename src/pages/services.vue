@@ -14,6 +14,8 @@
       <v-col cols="12" md="6" class="text-center">
         <h2>Vous avez un chien qui tire en laisse et</h2>
         <h2>vous rêvez de balades agréables ?</h2>
+        <h2>Votre chien ne revient pas en présence de stimuli et</h2>
+        <h2>vous rêvez d’un bon rappel ?</h2>
       </v-col>
       <!-- Image à droite -->
       <v-col cols="12" md="6" class="d-flex justify-center">
@@ -28,14 +30,13 @@
       </v-col>
 
     </v-row>
-    <v-row>
-      <v-col class="d-flex flex-column justify-center align-center text-center">
-        <h2>Votre chien ne revient pas en présence de stimuli et</h2>
-        <h2>vous rêvez d’un bon rappel ?</h2>
-      </v-col>
-    </v-row>
     <v-row align="center" justify="space-between" class="flex-wrap">
-      <!-- Image à gauche -->
+      <!-- texte à gauche -->
+      <v-col cols="12" md="6" class="text-center">
+        <h2>Vous avez un chiot et</h2>
+        <h2>vous rêvez de lui donner une bonne éducation ?</h2>
+      </v-col>
+      <!-- Image à droite -->
       <v-col cols="12" md="6" class="d-flex justify-center">
         <v-img
           src="/images/chiot.jpg"
@@ -46,16 +47,12 @@
           contain
         ></v-img>
       </v-col>
-      <!-- texte à droite -->
-      <v-col cols="12" md="6" class="text-center">
-        <h2>Vous avez un chiot et</h2>
-        <h2>vous rêvez de lui donner une bonne éducation ?</h2>
-      </v-col>
+
 
     </v-row>
     <v-row>
       <v-col class="d-flex flex-column justify-center align-center text-center">
-        <h2>Votre chien ne vous écoute pas et</h2>
+        <h2>Bref, votre chien ne vous écoute pas et</h2>
         <h2>vous rêvez d’avoir un chien obéissant et</h2>
         <h2>plus de complicité avec lui ?</h2>
       </v-col>
@@ -64,10 +61,28 @@
       class="d-flex flex-wrap justify-space-between justify-center align-center text-center pa-4 rounded-lg elevation-2">
       <!-- contact à gauche -->
       <v-col cols="12" md="6" class="d-flex flex-column justify-center align-center">
-        <p><strong>CONTACTEZ-NOUS !</strong></p>
-        <p>06.73.33.84.59</p>
-        <p>Du lundi au samedi</p>
-        <p>De 8h30 à 20h</p>
+        <v-card class="pa-4 rounded-lg" style="background-color: #f3c247;">
+          <v-card-title class="text-center">
+            <strong>CONTACTEZ-NOUS !</strong>
+            <p>06.73.33.84.59</p>
+          </v-card-title>
+          <v-card-text>
+            <v-table style="background-color: #ffd975; border-radius: 10px;">
+              <thead>
+              <tr>
+                <th class="text-left">Semaine</th>
+                <th class="text-left">Week-end</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>12-14h <br> 17-20h</td>
+                <td>9-20h</td>
+              </tr>
+              </tbody>
+            </v-table>
+          </v-card-text>
+        </v-card>
       </v-col>
 
       <!-- Texte à droite -->
@@ -102,7 +117,12 @@
 
     </v-row>
     <v-row align="center" justify="space-between" class="flex-wrap">
-      <!-- Image à gauche -->
+      <!-- texte à gauche -->
+      <v-col cols="12" md="6" class="text-center">
+        <h2>Saute sur vous et sur vos invités ?</h2>
+        <h2>Est agressif ? Craintif ?</h2>
+      </v-col>
+      <!-- Image à droite -->
       <v-col cols="12" md="6" class="d-flex justify-center">
         <v-img
           src="/images/chien_agressif.jpg"
@@ -113,11 +133,7 @@
           contain
         ></v-img>
       </v-col>
-      <!-- texte à droite -->
-      <v-col cols="12" md="6" class="text-center">
-        <h2>Saute sur vous et sur vos invités ?</h2>
-        <h2>Est agressif ? Craintif ?</h2>
-      </v-col>
+
 
     </v-row>
     <v-row align="center" justify="space-between" class="flex-wrap">
@@ -146,10 +162,28 @@
       class="d-flex flex-wrap justify-space-between justify-center align-center text-center pa-4 rounded-lg elevation-2">
       <!-- contact à gauche -->
       <v-col cols="12" md="6" class="d-flex flex-column justify-center align-center">
-        <p><strong>CONTACTEZ-NOUS !</strong></p>
-        <p>06.73.33.84.59</p>
-        <p>Du lundi au samedi</p>
-        <p>De 8h30 à 20h</p>
+        <v-card class="pa-4 rounded-lg" style="background-color: #f3c247;">
+          <v-card-title class="text-center">
+            <strong>CONTACTEZ-NOUS !</strong>
+            <p>06.73.33.84.59</p>
+          </v-card-title>
+          <v-card-text>
+            <v-table style="background-color: #ffd975; border-radius: 10px;">
+              <thead>
+              <tr>
+                <th class="text-left">Semaine</th>
+                <th class="text-left">Week-end</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>12-14h <br> 17-20h</td>
+                <td>9-20h</td>
+              </tr>
+              </tbody>
+            </v-table>
+          </v-card-text>
+        </v-card>
       </v-col>
 
       <!-- Texte à droite -->

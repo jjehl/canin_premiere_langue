@@ -33,30 +33,40 @@
         <p>69140 Rillieux-la-Pape</p>
       </v-col>
     </v-row>
-    <v-row class="d-flex flex-column justify-center align-center text-center">
-      <br>
-      <h2>Du lundi au vendredi</h2>
-      <h2>Entre 12h et 14h et de 17h à 20h</h2>
-      <br>
-      <h2>Le samedi</h2>
-      <h2>De 9h à 19h</h2>
-      <br>
-    </v-row>
+
     <v-row
       class="d-flex flex-wrap justify-space-between justify-center align-center text-center pa-4 rounded-lg elevation-2">
       <!-- contact à gauche -->
       <v-col cols="12" md="6" class="d-flex flex-column justify-center align-center">
-        <p><strong>CONTACTEZ-NOUS !</strong></p>
-        <p>06.73.33.84.59</p>
-        <p>Du lundi au samedi</p>
-        <p>De 8h30 à 20h</p>
+        <v-card class="pa-4 rounded-lg" style="background-color: #f3c247;">
+          <v-card-title class="text-center">
+            <strong>CONTACTEZ-NOUS !</strong>
+            <p>06.73.33.84.59</p>
+          </v-card-title>
+          <v-card-text>
+            <v-table style="background-color: #ffd975; border-radius: 10px;">
+              <thead>
+              <tr>
+                <th class="text-left">Semaine</th>
+                <th class="text-left">Week-end</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>12-14h <br> 17-20h</td>
+                <td>9-20h</td>
+              </tr>
+              </tbody>
+            </v-table>
+          </v-card-text>
+        </v-card>
       </v-col>
 
       <!-- Texte à droite -->
       <v-col cols="12" md="6">
 
-        <h2>Parce que c’est à vous d’apprendre</h2>
-        <h2>sa langue et ses codes !</h2>
+        <h2>Nous avons des solutions !</h2>
+        <h2>Apprenez sa langue !</h2>
 
       </v-col>
     </v-row>

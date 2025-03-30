@@ -26,6 +26,7 @@
             <h1>Comportement</h1>
             <h1>Éducation canine</h1>
             <h1>Formation des maîtres</h1>
+            <h1>Prévention des morsures</h1>
 
 
         </v-row>
@@ -80,7 +81,7 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>12-14h / 17-20h</td>
+                  <td>12-14h <br> 17-20h</td>
                   <td>9-20h</td>
                 </tr>
               </tbody>
