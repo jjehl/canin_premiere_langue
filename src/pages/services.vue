@@ -5,6 +5,19 @@
       <p style="font-size: 0.9em;">Canin première langue - ASSOCIATION loi 1901 - Pour la prévention des morsures, des
         abandons et des euthanasies</p>
     </v-row>
+    <v-row class="d-flex flex-column justify-center align-center text-center">
+      <br>
+      <h3>Séances à domicile</h3>
+      <h3>Méthode Positive non permissive</h3>
+      <h3>Toutes races, tous âges </h3>
+      <p class="text-info">(de 2 mois à 10 ans et +)</p>
+      <h3>Secteur Lyon Nord </h3>
+      <p class="text-info">
+        (Rillieux-la-Pape, Sathonay-Camp, Caluire et Cuire, Neyron, Miribel,
+        Beynost…)
+      </p>
+      <br>
+    </v-row>
     <v-row class="green-background d-flex flex-column justify-center align-center text-center">
       <h1>Education Canine</h1>
     </v-row>

@@ -23,49 +23,63 @@
       <!-- Texte à droite -->
       <v-col cols="12" md="6">
         <v-row class="green-background d-flex flex-column justify-center align-center text-center">
-            <h1>Comportement</h1>
-            <h1>Éducation canine</h1>
+            <h1>PECCRAM - Prévention des morsures</h1>
+            <h1>Comportement et Éducation canine</h1>
             <h1>Formation des maîtres</h1>
-            <h1>Prévention des morsures</h1>
+
 
 
         </v-row>
-        <v-row class="d-flex flex-column justify-center align-center text-center">
-          <br>
-          <h3>Séances à domicile</h3>
-          <h3>Méthode Positive non permissive</h3>
-          <h3>Toutes races, tous âges </h3>
-          <p class="text-info">(de 2 mois à 10 ans et +)</p>
-          <h3>Secteur Lyon Nord </h3>
-          <p class="text-info">
-            (Rillieux-la-Pape, Sathonay-Camp, Caluire et Cuire, Neyron, Miribel,
-            Beynost…)
-          </p>
-          <br>
-        </v-row>
+
       </v-col>
     </v-row>
-
-    <!-- Contenu supplémentaire en dessous -->
     <v-row>
       <v-col class="d-flex flex-column justify-center align-center text-center">
+        <br>
+        <h2>Objectifs de l’association</h2>
+        <p><b>Prévention des morsures, abandons et euthanasies.</b><br>
+          En oeuvrant auprès des <b>jeunes enfants</b>, des <b>propriétaires</b> ou <b>futurs propriétaires</b> de chien,
+          mais aussi des <b>bénévoles</b> et/ou <b>professionnels</b> intervenant en refuges.
+        </p>
+        <br>
+        <h2>Missions de l’association</h2>
+        <p>
+          <b>Eduquer</b> la jeune génération à la connaissance du chien.<br>
+          <b>Former</b> les propriétaires ou futurs propriétaires de chien sur l’éducation, le langage canin et
+          l'origine des troubles du comportement.<br>
+          <b>Favoriser</b> le bien-être canin en développant des activités autour de la
+          dépense physique et mentale des chiens.
+        </p>
+        <br>
+      </v-col>
+    </v-row>
+    <!-- Contenu supplémentaire en dessous -->
+
+    <v-row>
+      <v-col class="d-flex flex-column justify-center align-center text-center">
+        <h2>Vous travaillez dans…</h2>
+        <p class="text-bold">
+          … une école ? … un centre aéré ? … une médiathèque ? … une animalerie ?
+          <br>Responsabilisez vos jeunes au respect du chien et prévenez les morsures.
+        </p>
+        <br>
         <h2>Votre chien…</h2>
         <p class="text-bold">
           … tire en laisse ? … aboie trop ? … saute ? … ne vous écoute pas ?
-          … détruit ? … vole ? … agresse ? … craint tout ?
+          … détruit ? … vole ? … agresse ? … craint tout ?<br>
+          Formez vous au comportement canin.
         </p>
         <br>
         <h2>Vous avez un chiot…</h2>
         <p class="text-bold">
           … et vous souhaitez l’éduquer ?
         </p>
-        <br>
+        <br><br>
+        <h2>Nous avons des solutions !</h2>
       </v-col>
     </v-row>
-    <v-row
-        class="d-flex flex-wrap justify-space-between justify-center align-center text-center pa-4 rounded-lg elevation-2">
-      <!-- contact à gauche -->
-      <v-col cols="12" md="6" class="d-flex flex-column justify-center align-center">
+    <v-row>
+      <v-col class="d-flex flex-column justify-center align-center text-center">
         <v-card class="pa-4 rounded-lg" style="background-color: #f3c247;">
           <v-card-title class="text-center">
             <strong>CONTACTEZ-NOUS !</strong>
@@ -74,52 +88,24 @@
           <v-card-text>
             <v-table style="background-color: #ffd975; border-radius: 10px;">
               <thead>
-                <tr>
-                  <th class="text-left">Semaine</th>
-                  <th class="text-left">Week-end</th>
-                </tr>
+              <tr>
+                <th class="text-left">Semaine</th>
+                <th class="text-left">Week-end</th>
+              </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>12-14h <br> 17-20h</td>
-                  <td>9-20h</td>
-                </tr>
+              <tr>
+                <td>12-14h <br> 17-20h</td>
+                <td>9-20h</td>
+              </tr>
               </tbody>
             </v-table>
           </v-card-text>
         </v-card>
       </v-col>
-
-      <!-- Texte à droite -->
-      <v-col cols="12" md="6">
-
-        <h2>Nous avons des solutions !</h2>
-        <h2>Apprenez sa langue !</h2>
-
-      </v-col>
     </v-row>
-    <v-row>
-      <v-col class="d-flex flex-column justify-center align-center text-center">
-        <br>
-        <h3>L’objectif de l’association</h3>
-        <p><b>Prévention des morsures, abandons et euthanasies.</b>
-          En s’adressant prioritairement aux <b>propriétaires</b> ou <b>futurs propriétaires</b> de chien.
-          Mais aussi auprès des <b>bénévoles</b> et/ou <b>professionnels</b> œuvrant en refuges.
-          Et en intervenant auprès <b>des enfants et adolescents</b> pour faire connaître les besoins des chiens et
-          l’importance d’y répondre.
-        </p>
-        <br>
-        <h3>Les missions de l’association</h3>
-        <p>
-          <b>Former les propriétaires ou futurs propriétaires de chien</b> sur l’éducation, le langage canin et
-          l'origine des troubles du comportement.
-          <b>Favoriser le bien-être canin</b> en développant des activités autour de la
-          dépense physique et mentale des chiens.
-          <b>Informer les futures générations</b> à propos de « qu’est-ce ça signifie d’avoir un chien ».
-        </p>
-        <br>
-      </v-col>
-    </v-row>
+
+
   </v-container>
 </template>
 
