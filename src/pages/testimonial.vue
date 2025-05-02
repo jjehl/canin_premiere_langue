@@ -11,6 +11,7 @@
     <v-row align="center" justify="space-between" class="flex-wrap">
       <!-- texte à gauche -->
       <v-col cols="12" md="6" class="text-justify" style="text-align: justify;">
+        <h2>Alex et Draco - 2025</h2>
         &quot;Un nouveau départ&quot;<br><br>
         Draco est un croisé berger que mon conjoint et moi avons adopté à l’âge
         présumé de 11 mois. Il a été retrouvé errant avec d’être récupéré par la SPA de
@@ -62,13 +63,21 @@
     <v-row align="center" justify="space-between" class="flex-wrap">
 
       <!-- texte à gauche -->
-      <v-col cols="12" md="6" class="text-center">
-        <h2>Jessica - 2024</h2>
-        <br>
-        <h2>Nicole et Taylor - 2024</h2>
-        <br>
-        <h2>Nicolas et Ulya - 2023</h2>
+      <v-col cols="12" md="6" class="text-justify" style="text-align: justify;">
+        <h2>Nicolas et Ulya - 2023</h2
+        &quot;Une vrai socialisation !&quot;<br><br>
+        Ulya est notre 2e chien. C'est une Cane Corso adoptée à 2,5 mois. Molosse encore adolescente de près de 40 kg, tout en muscle au fort caractère. Démonstrative dans les câlins, mais de tempérament craintif et très courageux. Le cocktail peut se révéler détonant.
+        Après avoir fait la sociabilisation lors des 7 mois d'éducation positive et collective en club privé, elle restait encore assez réactive.
+        S'en est suivi une autre éducation hebdomadaire plus classique, au sein d'une association agréée par la centrale canine.
+        Son caractère protecteur et démonstratif a augmenté vers 18 mois.<br><br>
+        C'est à peu près à cette période que nous avons rencontré Élodie.
+        Grâce à elle Ulya a repris une place plus juste au sein de la famille. Des ajustements ont permis d'éviter qu'elle prenne trop une place protectrice, qu'elle comprenne que ce rôle m'était surtout alloué.
+        C'est Élodie qui nous a permis de comprendre quels ajustements étaient nécessaires afin que Ulya puisse aller partout avec nous.
+        Beaucoup de ces chiens restent dans des jardins car difficilement sortables de part leur réaction explosive.<br><br>
+        C'est grâce à Canin première langue notamment que nous continuons à apprendre, ajuster, et aussi rester motivé malgré les longs mois d'adolescence, et les retours en arrière éducatifs.
+        Pour tout ça, la bienveillance, le partage de connaissances, la patience et la disponibilité, un GRAND GRAND MERCI 🙏
       </v-col>
+
       <!-- Image à droite -->
       <v-col cols="12" md="6" class="d-flex flex-column  align-center">
         <h2>Carole et Cachou - 15/12/2024</h2>
@@ -82,7 +91,9 @@
         ></v-img>
       </v-col>
     </v-row>
-
+    <v-row align="center" justify="space-between" class="flex-wrap">
+                <h2>Mais aussi, Jessica (2024), Nicole et Taylor (2024) ...</h2><br><br>
+    </v-row>
     <v-row
       class="d-flex flex-wrap justify-space-between justify-center align-center text-center pa-4 rounded-lg elevation-2">
       <!-- contact à gauche -->

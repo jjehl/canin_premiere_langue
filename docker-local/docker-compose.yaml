@@ -4,7 +4,7 @@ services:
     image: jjehl/canin:dev
     build:
       context: ../
-      dockerfile: docker/Dockerfile-dev
+      dockerfile: docker-local/Dockerfile-dev
     container_name: vue_server_canin
     command: |
       sh -c "

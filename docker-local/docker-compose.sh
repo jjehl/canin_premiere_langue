@@ -1,1 +1,1 @@
-docker compose up --build --force-recreate
+docker compose -p canin-local up --build --force-recreate
