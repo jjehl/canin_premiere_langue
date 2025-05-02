@@ -64,7 +64,7 @@
 
       <!-- texte à gauche -->
       <v-col cols="12" md="6" class="text-justify" style="text-align: justify;">
-        <h2>Nicolas et Ulya - 2023</h2
+        <h2>Nicolas et Ulya - 2023</h2>
         &quot;Une vrai socialisation !&quot;<br><br>
         Ulya est notre 2e chien. C'est une Cane Corso adoptée à 2,5 mois. Molosse encore adolescente de près de 40 kg, tout en muscle au fort caractère. Démonstrative dans les câlins, mais de tempérament craintif et très courageux. Le cocktail peut se révéler détonant.
         Après avoir fait la sociabilisation lors des 7 mois d'éducation positive et collective en club privé, elle restait encore assez réactive.
