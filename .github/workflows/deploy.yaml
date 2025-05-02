@@ -122,5 +122,6 @@ jobs:
 #          port: ${{ secrets.SSH_CANIN_PORT }}
 #          script: |
 #            source ${{ env.VERSION_FILE }}
+#            docker login rg.nl-ams.scw.cloud/canin-registry -u nologin --password-stdin <<< ${{ secrets.SCW_SECRET_KEY }}
 #            cd deploy
 #            bash start_remote.sh $DEPLOY_ENV
