@@ -75,53 +75,70 @@ jobs:
       - name: Push Docker image
         run: docker push rg.nl-ams.scw.cloud/canin-registry/canin-frontend:${{ env.IMAGE_TAG }}
 
-#  deploy:
-#    runs-on: ubuntu-latest
-#    needs: build-and-push
-#    environment: prod
-#    steps:
-#      - name: Download code artifact
-#        uses: actions/download-artifact@v4
-#        with:
-#          name: code
-#          path: .
-#
-#      - name: Set version file
-#        id: version-file
-#        run: |
-#          source version.env
-#          echo "VERSION_FILE=version_${DEPLOY_ENV}.env" >> $GITHUB_ENV
-#
-#      - name: Display variables
-#        run: |
-#          cat version.env
-#          echo "${{ env.VERSION_FILE }}"
-#          mv version.env ${{ env.VERSION_FILE }}
-#
-#      - name: Copy files to server
-#        uses: appleboy/scp-action@v0.1.7
-#        with:
-#          host: ${{ secrets.SSH_CANIN_HOST }}
-#          username: ${{ secrets.SSH_CANIN_USER }}
-#          key: ${{ secrets.SSH_CANIN_KEY }}
-#          source: >
-#            ./deploy/start_remote.sh,
-#            ./deploy/docker-compose-re7.yaml,
-#            ./deploy/docker-compose-prod.yaml,
-#            ./${{ env.VERSION_FILE }},
-#          target: /home/canin/
-#          port: ${{ secrets.SSH_CANIN_PORT }}
-#          overwrite: true
-#
-#      - name: Start docker compose
-#        uses: appleboy/ssh-action@v1.0.0
-#        with:
-#          host: ${{ secrets.SSH_CANIN_HOST }}
-#          username: ${{ secrets.SSH_CANIN_USER }}
-#          key: ${{ secrets.SSH_CANIN_KEY }}
-#          port: ${{ secrets.SSH_CANIN_PORT }}
-#          script: |
-#            source ${{ env.VERSION_FILE }}
-#            docker login rg.nl-ams.scw.cloud/canin-registry -u nologin --password-stdin <<< ${{ secrets.SCW_SECRET_KEY }}
-#            cd deploy
-#            bash start_remote.sh $DEPLOY_ENV
+  deploy:
+    name: "Deploy on OVH"
+    runs-on: ubuntu-latest
+    needs: build-and-push
+    steps:
+      - name: Download code artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: code
+          path: .
+      - name: Set vars from version.env
+        run: |
+          source version-front.env
+          echo "SSH_KEY_SECRET=ssh-key-${DEPLOY_ENV}" >> $GITHUB_ENV
+          echo "VERSION_FILE=version-front-${DEPLOY_ENV}.env" >> $GITHUB_ENV
+          echo "COMPOSE_FILE=docker-compose-${DEPLOY_ENV}.yaml" >> $GITHUB_ENV
+      - name: Get scaleways secrets using scaleways credential
+        uses: scaleway/action-scw-secret@v0
+        with:
+          secret-names: |
+            /canin-server/secret-connect
+            /canin-server/${{ env.SSH_KEY_SECRET }}
+          access-key: ${{ secrets.SCW_ACCESS_KEY }}
+          secret-key: ${{ secrets.SCW_SECRET_KEY }}
+          default-project-id: ${{ secrets.SCW_DEFAULT_PROJECT_ID }}
+          default-organization-id: ${{ secrets.SCW_DEFAULT_ORGANIZATION_ID }}
+      - name: Set vars from scaleway
+        run: |
+          source version-front.env
+          # Get ssh parameters from scaleway secrets
+          SSH_HOST=$(echo "$SECRET_CONNECT" | jq -r ".SSH_HOST_${DEPLOY_ENV^^}")
+          SSH_USER=$(echo "$SECRET_CONNECT" | jq -r ".SSH_USER_${DEPLOY_ENV^^}")
+          SSH_PORT=$(echo "$SECRET_CONNECT" | jq -r ".SSH_PORT_${DEPLOY_ENV^^}")
+          declare -n SSH_KEY_JSON="SSH_KEY_${DEPLOY_ENV^^}"
+          SSH_KEY=$(echo "$SSH_KEY_JSON" | jq -r ".ssh_private_key")
+          # export variables to be used in next steps
+          echo "SSH_HOST=$SSH_HOST" >> $GITHUB_ENV
+          echo "SSH_USER=$SSH_USER" >> $GITHUB_ENV
+          echo "SSH_PORT=$SSH_PORT" >> $GITHUB_ENV
+          echo "$SSH_KEY" > ssh_key
+          cp version-front.env ${{ env.VERSION_FILE }}
+      - name: Copy files to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ env.SSH_HOST }}
+          username: ${{ env.SSH_USER }}
+          key_path: ./ssh_key
+          source: >
+            ./deploy/${{ env.COMPOSE_FILE }},
+            ./${{ env.VERSION_FILE }},
+            ./deploy/start_remote.sh,
+          target: /home/canin/
+          port: ${{ env.SSH_PORT }}
+          overwrite: true
+
+      - name: Start docker compose
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ env.SSH_HOST }}
+          username: ${{ env.SSH_USER }}
+          key_path: ./ssh_key
+          port: ${{ env.SSH_PORT }}
+          script: |
+            docker login rg.nl-ams.scw.cloud/canin-registry -u nologin --password-stdin <<< ${{ secrets.SCW_SECRET_KEY }}
+            source ${{ env.VERSION_FILE }}
+            cd deploy
+            bash start_remote.sh $DEPLOY_ENV
