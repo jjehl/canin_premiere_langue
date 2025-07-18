@@ -23,12 +23,17 @@
       <!-- Texte à droite -->
       <v-col cols="12" md="6">
         <v-row class="green-background d-flex flex-column justify-center align-center text-center">
-            <h1>PECCRAM - Prévention des morsures</h1>
             <h1>Comportement et Éducation canine</h1>
             <h1>Formation des maîtres</h1>
+            <h1>Prévention des morsures (PECCRAM)</h1>
 
 
 
+        </v-row>
+        <v-row class="d-flex flex-column justify-center align-center text-center">
+          <p class="promo-text">
+            PROMOTION été 2025 pour nouvelle adoption chien de refuge
+          </p>
         </v-row>
 
       </v-col>
@@ -44,11 +49,13 @@
         <br>
         <h2>Missions de l’association</h2>
         <p>
-          <b>Eduquer</b> la jeune génération à la connaissance du chien.<br>
+
           <b>Former</b> les propriétaires ou futurs propriétaires de chien sur l’éducation, le langage canin et
           l'origine des troubles du comportement.<br>
+          <b>Former</b> les bénévoles oeuvrant en refuges pour canaliser les chiens.<br>
           <b>Favoriser</b> le bien-être canin en développant des activités autour de la
-          dépense physique et mentale des chiens.
+          dépense physique et mentale des chiens.<br>
+          <b>Eduquer</b> la jeune génération à la connaissance du chien.
         </p>
         <br>
       </v-col>
@@ -57,12 +64,6 @@
 
     <v-row>
       <v-col class="d-flex flex-column justify-center align-center text-center">
-        <h2>Vous travaillez dans…</h2>
-        <p class="text-bold">
-          … une école ? … un centre aéré ? … une médiathèque ? … une animalerie ?
-          <br>Responsabilisez vos jeunes au respect du chien et prévenez les morsures.
-        </p>
-        <br>
         <h2>Votre chien…</h2>
         <p class="text-bold">
           … tire en laisse ? … aboie trop ? … saute ? … ne vous écoute pas ?
@@ -74,7 +75,14 @@
         <p class="text-bold">
           … et vous souhaitez l’éduquer ?
         </p>
-        <br><br>
+        <br>
+        <h2>Vous travaillez dans…</h2>
+        <p class="text-bold">
+          … une école ? … un centre aéré ? … une médiathèque ? … une animalerie ?
+          <br>Responsabilisez vos jeunes au respect du chien et prévenez les morsures.
+        </p>
+        <br>
+        <br>
         <h2>Nous avons des solutions !</h2>
       </v-col>
     </v-row>
@@ -120,6 +128,12 @@
   .rounded-image {
     margin-bottom: 20px; /* Espace sous l'image */
   }
+}
+
+.promo-text {
+  font-size: 2em;
+  color: #d32f2f; /* Rouge vif */
+  font-weight: bold;
 }
 </style>
 <script setup lang="ts">

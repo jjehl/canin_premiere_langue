@@ -18,6 +18,12 @@
       </p>
       <br>
     </v-row>
+        <v-row class="d-flex flex-column justify-center align-center text-center">
+          <p class="promo-text">
+            PROMOTION été 2025 pour nouvelle adoption chien de refuge :<br>
+            15% de réduction sur les séances d'éducation canine/troubles du comportement !
+          </p>
+        </v-row>
     <v-row class="green-background d-flex flex-column justify-center align-center text-center">
       <h1>Education Canine</h1>
     </v-row>
