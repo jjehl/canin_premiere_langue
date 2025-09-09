@@ -32,7 +32,7 @@
         </v-row>
         <v-row class="d-flex flex-column justify-center align-center text-center">
           <p class="promo-text">
-            PROMOTION été 2025 pour nouvelle adoption chien de refuge
+            Tarifs préférentiels pour les nouvelles adoptions de chiens de refuge :<br> 15% de réduction sur les séances d'éducation canine /troubles du comportement !
           </p>
         </v-row>
 
