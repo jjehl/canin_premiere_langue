@@ -32,6 +32,12 @@ export default defineConfig({
         }],
       },
     }),
+    {
+      name: 'remove-ttf-preload',
+      transformIndexHtml(html: string) {
+        return html.replace(/<link rel="preload"[^>]*type="font\/ttf"[^>]*>\n?/g, '')
+      },
+    },
   ],
   define: { 'process.env': {} },
   resolve: {
