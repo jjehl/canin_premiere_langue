@@ -48,17 +48,15 @@ Il comporte 3 jobs séquentiels : **prepare** → **build-and-push** → **deplo
 
 ### Recette (environnement `re7`)
 
-Déclenché automatiquement sur :
-- un **push** sur la branche `main`
-- une **pull request** ouverte, synchronisée ou rouverte vers `main`
-
-Le tag Docker utilisé est le SHA du commit (`github.sha`).
+- **URL** : https://re7.caninpremierelangue.fr
+- Déclenché automatiquement sur un **push** ou une **pull request** vers `main`
+- Tag Docker : SHA du commit (`github.sha`)
 
 ### Production (environnement `prod`)
 
-Déclenché automatiquement lors de la **publication d'une release GitHub** (création d'un tag via l'interface GitHub → *Releases* → *Publish release*).
-
-Le tag Docker utilisé est le nom du tag de la release (`github.event.release.tag_name`).
+- **URL** : https://caninpremierelangue.fr
+- Déclenché automatiquement à la **publication d'une release GitHub** (création d'un tag via *Releases* → *Publish release*)
+- Tag Docker : nom du tag de la release (`github.event.release.tag_name`)
 
 ### Détail du pipeline
 
