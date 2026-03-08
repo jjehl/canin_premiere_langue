@@ -24,8 +24,7 @@
     <v-spacer></v-spacer>
     <v-row v-if="!isMobile" class="d-flex align-center">
       <v-btn variant="text" to="/">Accueil</v-btn>
-      <v-btn variant="text" to="/services">Services</v-btn>
-      <v-btn variant="text" to="/testimonial">Témoignages</v-btn>
+      <v-btn variant="text" to="/notre-demarche">Notre démarche</v-btn>
       <v-btn variant="text" to="/contact">Contact</v-btn>
     </v-row>
 
@@ -40,11 +39,8 @@
         <v-list-item link to="/">
           <v-list-item-title>Accueil</v-list-item-title>
         </v-list-item>
-        <v-list-item link to="/services">
-          <v-list-item-title>Services</v-list-item-title>
-        </v-list-item>
-        <v-list-item link to="/testimonial">
-          <v-list-item-title>Témoignages</v-list-item-title>
+        <v-list-item link to="/notre-demarche">
+          <v-list-item-title>Notre démarche</v-list-item-title>
         </v-list-item>
         <v-list-item link to="/contact">
           <v-list-item-title>Contact</v-list-item-title>

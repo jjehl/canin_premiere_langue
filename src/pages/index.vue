@@ -23,16 +23,19 @@
       <!-- Texte à droite -->
       <v-col cols="12" md="6">
         <v-row class="green-background d-flex flex-column justify-center align-center text-center">
-            <h1>Comportement et Éducation canine</h1>
-            <h1>Formation des maîtres</h1>
-            <h1>Prévention des morsures (PECCRAM)</h1>
+            <h1>Pour des chiens compris</h1>
 
 
 
         </v-row>
         <v-row class="d-flex flex-column justify-center align-center text-center">
-          <p class="promo-text">
-            Tarifs préférentiels pour les nouvelles adoptions de chiens de refuge :<br> 15% de réduction sur les séances d'éducation canine /troubles du comportement !
+          <p class="intro-text">
+            🐾 Le bien-être canin commence par la compréhension
+          </p>
+          <p>
+            Canin Première Langue est une association dédiée au bien-être des chiens.<br><br>
+            Parce qu'un chien ne parle pas notre langue, nous apprenons aux maîtres à comprendre la sienne.<br><br>
+            À travers la transmission du langage canin, l'association agit pour des relations plus équilibrées, plus justes et plus sereines.
           </p>
         </v-row>
 
@@ -41,75 +44,28 @@
     <v-row>
       <v-col class="d-flex flex-column justify-center align-center text-center">
         <br>
-        <h2>Objectifs de l’association</h2>
-        <p><b>Prévention des morsures, abandons et euthanasies.</b><br>
-          En oeuvrant auprès des <b>jeunes enfants</b>, des <b>propriétaires</b> ou <b>futurs propriétaires</b> de chien,
-          mais aussi des <b>bénévoles</b> et/ou <b>professionnels</b> intervenant en refuges.
-        </p>
-        <br>
-        <h2>Missions de l’association</h2>
+        <p class="section-title">Une démarche progressive vers le collectif</p>
         <p>
-
-          <b>Former</b> les propriétaires ou futurs propriétaires de chien sur l’éducation, le langage canin et
-          l'origine des troubles du comportement.<br>
-          <b>Former</b> les bénévoles oeuvrant en refuges pour canaliser les chiens.<br>
-          <b>Favoriser</b> le bien-être canin en développant des activités autour de la
-          dépense physique et mentale des chiens.<br>
-          <b>Eduquer</b> la jeune génération à la connaissance du chien.
+          Les ateliers collectifs permettent de créer des situations favorables au bien-être des chiens, dans un cadre structuré, sécurisant et adapté à leurs besoins physiques, émotionnels et relationnels.<br><br>
+          Pour que ce cadre soit pleinement bénéfique, la transmission aux maîtres des connaissances du langage canin et de la compréhension des besoins de leur chien peut s’appuyer sur un accompagnement initial.
+        </p>
+        <v-divider class="my-6" style="width: 60%;"></v-divider>
+        <p class="section-title">Un projet associatif</p>
+        <p>
+          Canin Première Langue fonctionne dans un cadre non lucratif.<br><br>
+          L’adhésion permet de rejoindre une dynamique collective centrée sur le bien-être canin :
+          ateliers collectifs, temps d’échange entre les membres et partage d’expériences contribuent à faire vivre le projet.
+        </p>
+        <v-divider class="my-6" style="width: 60%;"></v-divider>
+        <p class="section-title">Demander des informations</p>
+        <p>
+          Pour toute demande de renseignement, vous pouvez contacter le président de l’association via le formulaire dédié.
         </p>
         <br>
-      </v-col>
-    </v-row>
-    <!-- Contenu supplémentaire en dessous -->
-
-    <v-row>
-      <v-col class="d-flex flex-column justify-center align-center text-center">
-        <h2>Votre chien…</h2>
-        <p class="text-bold">
-          … tire en laisse ? … aboie trop ? … saute ? … ne vous écoute pas ?
-          … détruit ? … vole ? … agresse ? … craint tout ?<br>
-          Formez vous au comportement canin.
-        </p>
+        <v-btn color="green-darken-2" variant="elevated" to="/contact" size="large">
+          Obtenir des informations
+        </v-btn>
         <br>
-        <h2>Vous avez un chiot…</h2>
-        <p class="text-bold">
-          … et vous souhaitez l’éduquer ?
-        </p>
-        <br>
-        <h2>Vous travaillez dans…</h2>
-        <p class="text-bold">
-          … une école ? … un centre aéré ? … une médiathèque ? … une animalerie ?
-          <br>Responsabilisez vos jeunes au respect du chien et prévenez les morsures.
-        </p>
-        <br>
-        <br>
-        <h2>Nous avons des solutions !</h2>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col class="d-flex flex-column justify-center align-center text-center">
-        <v-card class="pa-4 rounded-lg" style="background-color: #f3c247;">
-          <v-card-title class="text-center">
-            <strong>CONTACTEZ-NOUS !</strong>
-            <p>06.73.33.84.59</p>
-          </v-card-title>
-          <v-card-text>
-            <v-table style="background-color: #ffd975; border-radius: 10px;">
-              <thead>
-              <tr>
-                <th class="text-left">Semaine</th>
-                <th class="text-left">Week-end</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td>12-14h <br> 17-20h</td>
-                <td>9-20h</td>
-              </tr>
-              </tbody>
-            </v-table>
-          </v-card-text>
-        </v-card>
       </v-col>
     </v-row>
 
@@ -130,10 +86,15 @@
   }
 }
 
-.promo-text {
-  font-size: 2em;
-  color: #d32f2f; /* Rouge vif */
+.intro-text {
+  font-size: 1.4em;
   font-weight: bold;
+}
+
+.section-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 </style>
 <script setup lang="ts">
